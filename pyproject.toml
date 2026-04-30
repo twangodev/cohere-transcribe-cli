@@ -1,8 +1,25 @@
 [project]
 name = "cohere-transcribe-cli"
 version = "0.1.0"
-description = "Local CLI for Cohere Transcribe (Hugging Face Conformer ASR)."
-requires-python = ">=3.12"
+description = "Local CLI for Cohere Transcribe (open-source 2B Conformer ASR)."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = "==3.12.*"
+authors = [{ name = "James Ding", email = "pypi@twango.dev" }]
+keywords = ["cohere", "transcribe", "asr", "speech-recognition", "cli", "audio", "transformers"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
     "accelerate>=1.13.0",
     "av>=17.0.1",
@@ -18,6 +35,11 @@ dependencies = [
     "typer>=0.25.1",
 ]
 
+[project.urls]
+Homepage = "https://github.com/twangodev/cohere-transcribe-cli"
+Issues = "https://github.com/twangodev/cohere-transcribe-cli/issues"
+Model = "https://huggingface.co/CohereLabs/cohere-transcribe-03-2026"
+
 [project.scripts]
 cohere = "cohere_transcribe_cli.cli:app"
 
@@ -27,6 +49,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/cohere_transcribe_cli"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "README.md", "LICENSE", "pyproject.toml"]
 
 [dependency-groups]
 dev = [
