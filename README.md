@@ -11,7 +11,7 @@ handled automatically.
 ## Install
 
 ```bash
-uvx install cohere-transcribe-cli
+uvx run cohere-transcribe-cli
 ```
 
 First run downloads the 2B model (~4 GB) into the Hugging Face cache.
